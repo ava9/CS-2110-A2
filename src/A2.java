@@ -22,9 +22,15 @@ public class A2 {
          * methods of class String and see how you can tell that the first
          * and last occurrences of s2 in s are the same. Be sure you handle
          * correctly the case that s2 does not occur in s. */
-        return false;
+        int firstIndex = s.indexOf(s2);
+        int lastIndex = s.lastIndexOf(s2);
+        if ((firstIndex != -1) 
+        		&& (lastIndex != -1) 
+        		&& (firstIndex == lastIndex)){
+        	return true;
+        }
+    	return false;
     }
-
     /** 
      * String s consists of a first name followed by a last name. The two names are
      * separated by 1 or more blanks. There may be blank characters at the
@@ -43,8 +49,13 @@ public class A2 {
          * Finally, this method can be written using an oft-used pattern:
          *   1. Break the string into its parts
          *   2. Build the result from the parts. */
-
-        return null;
+    	s = s.trim();
+    	int firstBlank = s.indexOf(' ');
+    	int lastBlank = s.lastIndexOf(' ');
+    	String lastName = s.substring(0,firstBlank);
+    	String firstName = s.substring(lastBlank+1, s.length());
+    	s = firstName + ", " + lastName;
+    	return s;
     }
 
     /** 
@@ -58,20 +69,9 @@ public class A2 {
      *           For s = "Doug James", return "DJ"; 
      */
     public static String getInitials(String s) {
-            	
-    	String name = s.trim();
-    	
-    	String [] names = name.split(" ");
-    	
-    	if(names.length == 3){
-    		return "" + names[0].charAt(0) + names[1].charAt(0) + names[2].charAt(0);
-    	}
-    	else if(names.length == 2){
-    		return "" + names[0].charAt(0) + names[1].charAt(0);
-    	}
-    	
-    	return "";
-    	
+        // Do not use a loop or recursion.
+        
+        return null;
     }
     
     /** 
@@ -84,8 +84,12 @@ public class A2 {
     public static String replaceVowels(String s) {
         // This can be done with five statements. No loop is required.
         // Look for a suitable String function that replaces things.
-        
-        return null;
+        s = s.replace("a", "*");
+        s = s.replace("e", "*");
+        s = s.replace("i", "*");
+        s = s.replace("o", "*");
+        s = s.replace("u", "*");
+        return s;
     }
     
     /** 
@@ -96,17 +100,16 @@ public class A2 {
      *           For s = "Alan Turing" return "*l*n T*r*ng".
      */
     public static String replaceAllVowels(String s) {
-    	
-    	String [] vowels = {"a", "e", "i", "o", "u", "A", "E", "I", "O", "U"};
-    	
-    	s = s.trim();
-    	
-    	for (String vowel: vowels){
-    		
-    		s = s.replaceAll(vowel, "*");
-    	}
-    	
-    	return s;
+        // Writing a long list of 10 statements is not so good. Instead, write
+        // a loop that sequences through the characters in the following String
+        // vowels, replacing each one in s.
+        
+        // A for-loop to loop through a range b..c of integers can look like this:
+        //    for (int i= b; i <= c ; i= i+1) {
+        //        ...
+        //    }
+        
+        return null;
     }
     
     /** 
@@ -118,21 +121,12 @@ public class A2 {
      * should appear. Return the uncompressed version of s.
      */
     public static String decompress(String s) {
-    	    
-    	String decompressed = "";
-    	
-    	for (int i = 0; i < s.length(); i++){
-    		
-    		if(s.charAt(i) >= '0' && s.charAt(i) <= '9'){
-    			
-    			int x = Integer.parseInt("" + s.charAt(i));
-    			
-    			for(int j = 0; j < x; j++){
-    				decompressed += "" + s.charAt(i - 1);
-    			}
-    		}
-    	}
-
-        return decompressed;
+        // To produce the integer that is in String s1 use function
+        // Integer.parseInt(s1). Remember that a character c is not a String,
+        // and to change c into a String you may have to catenate it with the
+        // empty String.
+        // This function will probably need a loop within a loop
+        
+        return null;
     }
 }
