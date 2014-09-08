@@ -69,9 +69,20 @@ public class A2 {
      *           For s = "Doug James", return "DJ"; 
      */
     public static String getInitials(String s) {
-        // Do not use a loop or recursion.
-        
-        return null;
+    	
+    	String name = s.trim();
+    	
+    	String [] names = name.split(" ");
+    	
+    	if(names.length == 3){
+    		return "" + names[0].charAt(0) + names[1].charAt(0) + names[2].charAt(0);
+    	}
+    	else if(names.length == 2){
+    		return "" + names[0].charAt(0) + names[1].charAt(0);
+    	}
+    	
+    	return "";
+    	
     }
     
     /** 
@@ -100,16 +111,17 @@ public class A2 {
      *           For s = "Alan Turing" return "*l*n T*r*ng".
      */
     public static String replaceAllVowels(String s) {
-        // Writing a long list of 10 statements is not so good. Instead, write
-        // a loop that sequences through the characters in the following String
-        // vowels, replacing each one in s.
-        
-        // A for-loop to loop through a range b..c of integers can look like this:
-        //    for (int i= b; i <= c ; i= i+1) {
-        //        ...
-        //    }
-        
-        return null;
+    	
+    	String [] vowels = {"a", "e", "i", "o", "u", "A", "E", "I", "O", "U"};
+    	
+    	s = s.trim();
+    	
+    	for (String vowel: vowels){
+    		
+    		s = s.replaceAll(vowel, "*");
+    	}
+    	
+    	return s;
     }
     
     /** 
@@ -121,12 +133,21 @@ public class A2 {
      * should appear. Return the uncompressed version of s.
      */
     public static String decompress(String s) {
-        // To produce the integer that is in String s1 use function
-        // Integer.parseInt(s1). Remember that a character c is not a String,
-        // and to change c into a String you may have to catenate it with the
-        // empty String.
-        // This function will probably need a loop within a loop
-        
-        return null;
+	    
+    	String decompressed = "";
+    	
+    	for (int i = 0; i < s.length(); i++){
+    		
+    		if(s.charAt(i) >= '0' && s.charAt(i) <= '9'){
+    			
+    			int x = Integer.parseInt("" + s.charAt(i));
+    			
+    			for(int j = 0; j < x; j++){
+    				decompressed += "" + s.charAt(i - 1);
+    			}
+    		}
+    	}
+
+        return decompressed;
     }
 }
