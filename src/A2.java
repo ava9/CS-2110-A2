@@ -136,6 +136,8 @@ public class A2 {
 	    
     	String decompressed = "";
     	
+    	s = s.trim();
+    	
     	for (int i = 0; i < s.length(); i++){
     		
     		if(s.charAt(i) >= '0' && s.charAt(i) <= '9'){

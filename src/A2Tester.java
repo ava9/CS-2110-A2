@@ -3,7 +3,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 
-public class A2Tester2 {
+public class A2Tester {
 
 	@Test
 	
@@ -51,9 +51,15 @@ public class A2Tester2 {
 		assertEquals("James, Doug", A2.fixName(s));
 	}
 
-	//@Test
-	public void testGetInitials() {
-		fail("Not yet implemented");
+	@Test
+	public void testInitials() {
+		
+		String name = "    David Joseph Gries";
+		
+		String name1 = "Doug James";
+		
+		assertEquals(A2.getInitials(name), "DJG");
+		assertEquals(A2.getInitials(name1), "DJ");
 	}
 
 	@Test
@@ -72,14 +78,23 @@ public class A2Tester2 {
 		assertEquals("Al*n T*r*ng", A2.replaceVowels(s));
 	}
 
-	//@Test
+	@Test
 	public void testReplaceAllVowels() {
-		fail("Not yet implemented");
+		
+		String s = "Minecraft";
+		String s1 = "Alan Turing";
+		
+		assertEquals(A2.replaceAllVowels(s), "M*n*cr*ft");
+		assertEquals(A2.replaceAllVowels(s1), "*l*n T*r*ng");
+		
 	}
 
-	//@Test
+	@Test
 	public void testDecompress() {
-		fail("Not yet implemented");
+		
+		String s = "b3c1b5x2a0";
+		
+		assertEquals(A2.decompress(s), "bbbcbbbbbxx");
+		
 	}
-
 }
