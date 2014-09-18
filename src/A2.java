@@ -1,3 +1,5 @@
+//Aditya Agashe (ava9) and Shankar Athinarayanan (sa625)
+
 /** An instance contains static methods for assignment A2 */
 public class A2 {
 
